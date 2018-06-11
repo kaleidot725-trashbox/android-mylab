@@ -6,19 +6,25 @@ import android.view.LayoutInflater
 import android.support.v4.app.FragmentActivity
 import android.view.View
 import android.widget.ArrayAdapter
+import kaleidot725.listviewlaboratory.R.id
+import kaleidot725.listviewlaboratory.Person
 
-class ViewHolderAdapter(fragmentActivity: FragmentActivity?, resource : Int, list: List<Int>) : ArrayAdapter<Int>(fragmentActivity, resource, list) {
+class ViewHolderAdapter(fragmentActivity: FragmentActivity?, resource : Int, list: List<Person>) : ArrayAdapter<Person>(fragmentActivity, resource, list) {
     private val inflater : LayoutInflater = LayoutInflater.from(context)
 
-    class ViewHolder(var textView : TextView)
+    class ViewHolder(var firstNameTextView : TextView, var lastNameTextView : TextView, var ageTextView : TextView)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         lateinit var convertViewTemp : View
         lateinit var viewHolder : ViewHolder
 
         if (convertView == null) {
-            convertViewTemp = inflater.inflate(android.R.layout.simple_expandable_list_item_1, parent, false)
-            viewHolder = ViewHolder(convertViewTemp.findViewById<TextView>(android.R.id.text1))
+            convertViewTemp = inflater.inflate(kaleidot725.listviewlaboratory.R.layout.list_item, parent, false)
+
+            val firstNameTextView = convertViewTemp.findViewById<TextView>(kaleidot725.listviewlaboratory.R.id.firstName)
+            val lastNameTextView = convertViewTemp.findViewById<TextView>(kaleidot725.listviewlaboratory.R.id.lastName)
+            val ageTextView = convertViewTemp.findViewById<TextView>(kaleidot725.listviewlaboratory.R.id.age)
+            viewHolder = ViewHolder(firstNameTextView, lastNameTextView, ageTextView)
             convertViewTemp.setTag(viewHolder)
         }
         else {
@@ -26,7 +32,9 @@ class ViewHolderAdapter(fragmentActivity: FragmentActivity?, resource : Int, lis
             viewHolder = convertViewTemp.getTag() as ViewHolder
         }
 
-        viewHolder.textView.text = super.getItem(position).toString()
+        viewHolder.firstNameTextView.text = super.getItem(position).firstName
+        viewHolder.lastNameTextView.text = super.getItem(position).lastName
+        viewHolder.ageTextView.text = super.getItem(position).age.toString()
         return convertViewTemp
     }
 }

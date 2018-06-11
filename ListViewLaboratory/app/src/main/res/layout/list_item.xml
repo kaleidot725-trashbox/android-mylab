@@ -1,37 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:id="@+id/personItem"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <data>
-        <variable name="person" type="kaleidot725.listviewlaboratory.Person"/>
-    </data>
-
-    <LinearLayout
-        android:id="@+id/personItem"
-        android:orientation="vertical"
+    <TextView
+        android:id="@+id/firstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:text="firstName"
+        android:background="#FF9999"/>
 
-        <TextView
-            android:id="@+id/firstName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{person.firstName}"
-            android:background="#FF9999"/>
+    <TextView
+        android:id="@+id/lastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="lastName"
+        android:background="#99FF99"/>
 
-        <TextView
-            android:id="@+id/lastName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{person.lastName}"
-            android:background="#99FF99"/>
-
-        <TextView
-            android:id="@+id/age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{Integer.toString(person.age)}"
-            android:background="#9999FF"/>
-    </LinearLayout>
-
-</layout>
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="age"
+        android:background="#9999FF"/>
+</LinearLayout>
