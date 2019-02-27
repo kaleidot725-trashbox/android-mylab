@@ -1,2 +1,5 @@
 # android-mylab
-My Laboratory for Android
+
+Androidアプリケーション開発で利用するライブラリやフレームワークの実験場です。  
+kaledot725が作成したサンプルアプリを格納しております。
+
