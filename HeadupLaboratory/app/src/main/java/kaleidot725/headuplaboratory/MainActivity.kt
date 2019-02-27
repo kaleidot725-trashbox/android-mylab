@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var textEditText: EditText
     private lateinit var whenTimePicker : TimePicker
     private lateinit var notifyButton : Button
-    private var notifyId : Int = 0
+    private lateinit var idEditText : EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         titleEditText = findViewById<EditText>(R.id.et_text)
         textEditText = findViewById<EditText>(R.id.et_text)
         whenTimePicker = findViewById<TimePicker>(R.id.tm_when)
+        idEditText = findViewById<EditText>(R.id.et_id)
         notifyButton = findViewById<Button>(R.id.bt_notify)
         notifyButton.setOnClickListener { notification() }
     }
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         val channelName = channelNameEditText.text.toString()
         val title = titleEditText.text.toString()
         val text = textEditText.text.toString()
+        val notifyId = idEditText.text.toString().toInt()
         val whenMillSeconds = getTimeInMillisFromTimePicker(whenTimePicker)
         val notificationCompatBuilder: NotificationCompat.Builder
         val notificationManagerCompat : NotificationManagerCompat
@@ -68,7 +70,6 @@ class MainActivity : AppCompatActivity() {
 
         notificationManagerCompat = NotificationManagerCompat.from(this)
         notificationManagerCompat.notify(notifyId, notificationCompatBuilder.build())
-        notifyId++
     }
 
     fun getTimeInMillisFromTimePicker(timePicker : TimePicker) : Long

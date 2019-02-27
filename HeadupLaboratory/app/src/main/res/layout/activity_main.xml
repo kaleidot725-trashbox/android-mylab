@@ -60,6 +60,17 @@
                 android:layout_height="wrap_content"
                 android:timePickerMode="spinner"/>
 
+    <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID"/>
+
+    <EditText android:id="@+id/et_id"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="通知IDを入力してください"/>
+
     <Button android:id="@+id/bt_notify"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
