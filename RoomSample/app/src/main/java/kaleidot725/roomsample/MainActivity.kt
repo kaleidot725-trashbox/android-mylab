@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                 GlobalScope.launch(Dispatchers.Main) {
                     val textView = findViewById<TextView>(R.id.textView)
                     var concat = ""
-                    members.forEach { concat = concat + "${it.id} ${it.displayName}\n" }
+                    members.forEach { concat += "${it.id} ${it.displayName}\n" }
                     textView?.text = concat
                 }
             } catch(e : Exception) {
