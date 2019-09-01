@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [Member::class, Genkou::class], version = 2)
+@Database(entities = [Member::class], version = 1, exportSchema = true)
 abstract class MyDatabase : RoomDatabase() {
 
     abstract fun memberDao(): MemberDao
@@ -26,7 +26,7 @@ abstract class MyDatabase : RoomDatabase() {
             override fun migrate(database: SupportSQLiteDatabase) {
                 database.execSQL(
                     """
-                    create table genkou
+                    create table member2
                         (id text not null, progress integer not null, PRIMARY KEY(id))
                         """
                 )
