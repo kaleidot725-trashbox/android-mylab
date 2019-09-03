@@ -21,7 +21,6 @@ class ItemPagedListAdapter: PagedListAdapter<Item, ItemViewHolder>(diffCallback)
 
             override fun areContentsTheSame(oldItem: Item, newItem: Item): Boolean =
                 oldItem == newItem
-
         }
     }
 }

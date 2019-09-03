@@ -8,14 +8,20 @@ import kaleidot725.pagingsample.data.Item
 import kaleidot725.pagingsample.databinding.RecyclerViewItemBinding
 import kotlinx.android.synthetic.main.recycler_view_item.view.*
 
-class ItemViewHolder(parent : ViewGroup,
-                     private val binding : RecyclerViewItemBinding =
-                         DataBindingUtil.inflate<RecyclerViewItemBinding>(
-                             LayoutInflater.from(parent.context),
-                             R.layout.recycler_view_item,
-                             parent,
-                             false))
+class ItemViewHolder(
+    private val parent : ViewGroup,
+    private val binding : RecyclerViewItemBinding = create(parent))
     : RecyclerView.ViewHolder(binding.root) {
+
+    companion object {
+        fun create(parent : ViewGroup) : RecyclerViewItemBinding {
+            return DataBindingUtil.inflate<RecyclerViewItemBinding>(
+                LayoutInflater.from(parent.context),
+                R.layout.recycler_view_item,
+                parent,
+                false)
+        }
+    }
 
     var item : Item? = null
 

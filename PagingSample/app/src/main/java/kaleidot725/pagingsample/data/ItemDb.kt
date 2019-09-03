@@ -17,12 +17,13 @@ abstract  class  ItemDb : RoomDatabase() {
         @Synchronized
         fun get(context: Context): ItemDb {
             if (instance == null) {
-                instance = Room.databaseBuilder(context.applicationContext, ItemDb::class.java, "ItemDatabase")
-                    .addCallback(object : RoomDatabase.Callback() {
-                        override fun onCreate(db: SupportSQLiteDatabase) {
-                            createDefaultDb(context.applicationContext)
-                        }
-                    }).build()
+                val callback = object : RoomDatabase.Callback() {
+                    override fun onCreate(db: SupportSQLiteDatabase) {
+                        createDefaultDb(context.applicationContext)
+                    }
+                }
+
+                instance = Room.databaseBuilder(context.applicationContext, ItemDb::class.java, "ItemDatabase").addCallback(callback).build()
             }
             return instance!!
         }
