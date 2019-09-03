@@ -1,12 +1,13 @@
-package c.kaleidot725.pagingsample
+package kaleidot725.pagingsample
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
+import kaleidot725.pagingsample.data.ItemDb
 
 class ItemViewModel(app : Application) : AndroidViewModel(app) {
-    val dao = ItemDb.getInstance(app).itemDao()
+    val dao = ItemDb.get(app).itemDao()
 
      companion object {
          private const val PAGE_SIZE = 30
@@ -15,7 +16,6 @@ class ItemViewModel(app : Application) : AndroidViewModel(app) {
          private const val PREFETCH_DISTANCE = 20
      }
 
-    // LivePagedListBuilder を利用して DataSource.Factory と PagedList.Config から // LiveData<PagedList<Value>>を生成する
     val allItems = LivePagedListBuilder(dao.allItemByName(),
         PagedList.Config.Builder()
             .setPageSize(PAGE_SIZE)
