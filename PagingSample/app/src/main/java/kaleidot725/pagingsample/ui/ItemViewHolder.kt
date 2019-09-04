@@ -14,7 +14,7 @@ class ItemViewHolder(
     : RecyclerView.ViewHolder(binding.root) {
 
     companion object {
-        fun create(parent : ViewGroup) : RecyclerViewItemBinding {
+        private fun create(parent : ViewGroup) : RecyclerViewItemBinding {
             return DataBindingUtil.inflate<RecyclerViewItemBinding>(
                 LayoutInflater.from(parent.context),
                 R.layout.recycler_view_item,
