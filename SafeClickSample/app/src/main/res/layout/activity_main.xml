@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="vm" type="kaleidot725.safeclicksample.MainActivityViewModel"/>
+    </data>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="200dp"
+                android:gravity="center"
+                android:textSize="100dp"
+                android:text="@{vm.count}"/>
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="150dp"
+                android:layout_gravity="bottom"
+                android:text="plus"
+                android:onClick="@{vm::plus}"/>
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="100dp"
+                android:layout_gravity="bottom"
+                android:text="minus"
+                android:onClick="@{vm::minus}"/>
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="50dp"
+                android:layout_gravity="bottom"
+                android:text="safe plus"
+                app:onSafeClick="@{vm::plus}"/>
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:text="safe minus"
+                app:onSafeClick="@{vm::minus}"/>
+    </FrameLayout>
+</layout>
