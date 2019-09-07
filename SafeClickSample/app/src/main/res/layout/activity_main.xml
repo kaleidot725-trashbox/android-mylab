@@ -23,32 +23,32 @@
                 android:textSize="100dp"
                 android:text="@{vm.count}"/>
 
-        <Button
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="plus"
-                android:onClick="@{vm::plus}"/>
+        <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="plus"-->
+                <!--android:onClick="@{vm::plus}"/>-->
+
+        <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="minus"-->
+                <!--android:onClick="@{vm::minus}"/>-->
 
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="minus"
-                android:onClick="@{vm::minus}"/>
-
-        <Button
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="safe plus"
+                android:text="plus(safe)"
                 app:onSafeClick="@{vm::plus}"/>
 
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="safe minus"
+                android:text="minus(safe)"
                 app:onSafeClick="@{vm::minus}"/>
     </LinearLayout>
 </layout>
