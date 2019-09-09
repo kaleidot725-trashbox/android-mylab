@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NavigationSample</string>
+    <string name="correct">正解</string>
+    <string name="incorrect">不正解</string>
 </resources>
