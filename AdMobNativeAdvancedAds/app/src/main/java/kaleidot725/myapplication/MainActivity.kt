@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val builder = AdLoader.Builder(this, "ca-app-pub-6306836711962723/2110270785")
+        val builder = AdLoader.Builder(this, "広告ユニットID")
                builder.forUnifiedNativeAd { nativeAd ->
             val view = layoutInflater.inflate(R.layout.unified_nativead_view, null)
             val container = findViewById<FrameLayout>(R.id.nativead_container)
