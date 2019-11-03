@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/assert_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Assert"/>
+
+        <Button
+            android:id="@+id/debug_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Debug"/>
+
+        <Button
+            android:id="@+id/error_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Error"/>
+
+        <Button
+            android:id="@+id/info_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Info"/>
+
+        <Button
+            android:id="@+id/verbose_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verbose"/>
+
+        <Button
+            android:id="@+id/warn_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Warn"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
