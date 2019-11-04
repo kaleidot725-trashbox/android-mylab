@@ -12,10 +12,10 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/assert_button"
+            android:id="@+id/verbose_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Assert"/>
+            android:text="Verbose"/>
 
         <Button
             android:id="@+id/debug_button"
@@ -24,27 +24,34 @@
             android:text="Debug"/>
 
         <Button
-            android:id="@+id/error_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Error"/>
-
-        <Button
             android:id="@+id/info_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Info"/>
 
         <Button
-            android:id="@+id/verbose_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Verbose"/>
-
-        <Button
             android:id="@+id/warn_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Warn"/>
+
+        <Button
+            android:id="@+id/error_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Error"/>
+
+        <Button
+            android:id="@+id/assert_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Assert"/>
+
+        <Button
+            android:id="@+id/println_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Println"/>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
