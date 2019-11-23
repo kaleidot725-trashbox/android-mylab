@@ -14,14 +14,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val sizeTypeUniformView = findViewById<TextView>(R.id.size_type_uniform_view)
-        val minMaxGranularityView = findViewById<TextView>(R.id.min_max_granularity_view)
+        val granularityView = findViewById<TextView>(R.id.granularity_view)
+        val minMaxView = findViewById<TextView>(R.id.min_max_view)
         val sizePresetSizesView = findViewById<TextView>(R.id.size_preset_sizes_view)
 
         val sizeSeekBar = findViewById<SeekBar>(R.id.size_seek_bar)
         sizeSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
                 sizeTypeUniformView.updateHeight(progress)
-                minMaxGranularityView.updateHeight(progress)
+                granularityView.updateHeight(progress)
+                minMaxView.updateHeight(progress)
                 sizePresetSizesView.updateHeight(progress)
             }
             override fun onStartTrackingTouch(p0: SeekBar?) { }

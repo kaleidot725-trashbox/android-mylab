@@ -17,26 +17,34 @@
             android:id="@+id/size_type_uniform_view"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:text="Hello"
+            android:text="Uniform"
             android:background="#aaffaa"
             app:autoSizeTextType="uniform"/>
 
         <TextView
-            android:id="@+id/min_max_granularity_view"
+            android:id="@+id/granularity_view"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:text="Hello"
+            android:text="Granularity"
+            android:background="#aaaaaa"
+            app:autoSizeTextType="uniform"
+            app:autoSizeStepGranularity="10dp"/>
+
+        <TextView
+            android:id="@+id/min_max_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:text="MinMax"
             android:background="#ffaaaa"
             app:autoSizeTextType="uniform"
-            app:autoSizeMinTextSize="10dp"
-            app:autoSizeMaxTextSize="100dp"
-            app:autoSizeStepGranularity="10dp"/>
+            app:autoSizeMinTextSize="25dp"
+            app:autoSizeMaxTextSize="75dp"/>
 
         <TextView
             android:id="@+id/size_preset_sizes_view"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:text="Hello"
+            android:text="PresetSizes"
             android:background="#aaaaff"
             app:autoSizeTextType="uniform"
             app:autoSizePresetSizes="@array/autosize_text_sizes"/>
