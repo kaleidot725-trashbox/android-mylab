@@ -6,11 +6,14 @@
     tools:context=".OneFragment">
 
     <TextView
+        android:id="@+id/param_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:text="ONE"
         android:layout_marginBottom="50dp"/>
 
     <Button
+        android:id="@+id/next_button"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="bottom"

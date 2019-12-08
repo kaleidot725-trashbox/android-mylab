@@ -3,14 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OneFragment">
+    tools:context=".TwoFragment">
 
     <TextView
+        android:id="@+id/param_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:text="TWO"
         android:layout_marginBottom="50dp"/>
 
     <Button
+        android:id="@+id/next_button"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="bottom"
