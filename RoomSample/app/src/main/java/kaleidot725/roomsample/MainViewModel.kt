@@ -1,6 +1,5 @@
 package kaleidot725.roomsample
 
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
