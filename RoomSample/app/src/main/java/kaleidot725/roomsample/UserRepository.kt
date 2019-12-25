@@ -1,26 +1,23 @@
 package kaleidot725.roomsample
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-
 class UserRepository(private val dao : UserDao) {
     fun getAll() : List<User> {
         return dao.getAll()
     }
 
-    fun loadAllByIds(userIds: IntArray) : List<User> {
-        return dao.loadAllByIds(userIds)
+    fun getUser(id : Int ) : User {
+        return dao.getUser(id)
     }
 
-    fun findByName(first: String, last: String) : User {
-        return dao.findByName(first, last)
-    }
-
-    fun insertAll(vararg users: User) {
-        dao.insertAll(*users)
+    fun insert(user : User) {
+        return dao.insert(user)
     }
 
     fun delete(user: User) {
         dao.delete(user)
+    }
+
+    fun deleteAll() {
+        dao.deleteAll()
     }
 }

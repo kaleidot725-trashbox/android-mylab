@@ -1,24 +1,24 @@
 package kaleidot725.roomsample
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface UserDao {
-    @Query("SELECT * FROM user")
+    @Query("select * from users")
     fun getAll(): List<User>
 
-    @Query("SELECT * FROM user WHERE uid IN (:userIds)")
-    fun loadAllByIds(userIds: IntArray): List<User>
-
-    @Query("SELECT * FROM user WHERE first_name LIKE :first AND last_name LIKE :last LIMIT 1")
-    fun findByName(first: String, last: String): User
+    @Query("select * from users where id = :id")
+    fun getUser(id: Int): User
 
     @Insert
-    fun insertAll(vararg users: User)
+    fun insert(user : User)
+
+    @Update
+    fun update(user : User)
 
     @Delete
-    fun delete(user: User)
+    fun delete(user : User)
+
+    @Query("delete from users")
+    fun deleteAll()
 }
