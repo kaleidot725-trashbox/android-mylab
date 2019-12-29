@@ -4,8 +4,7 @@
     <attr name="number" format="integer"/>
     <attr name="displayMode" format="enum">
         <enum name="number" value="0"/>
-        <enum name="english" value="1"/>
-        <enum name="japanese" value="2"/>
+        <enum name="japanese" value="1"/>
     </attr>
 </declare-styleable>
 </resources>
