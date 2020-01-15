@@ -1,6 +1,5 @@
 package kaleidot725.roomsample
 
-import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,7 +18,7 @@ class  MainViewModel(private val repository: UserRepository) : ViewModel() {
         }
     }
 
-    fun addUser(view : View) {
+    fun addUser() {
         CoroutineScope(Dispatchers.IO).launch {
             val date = Date()
             repository.insert(User(0, date.time.toString(), date.time.toString()))
@@ -27,7 +26,7 @@ class  MainViewModel(private val repository: UserRepository) : ViewModel() {
         }
     }
 
-    fun deleteAll(view : View) {
+    fun deleteAll() {
         CoroutineScope(Dispatchers.IO).launch {
             repository.deleteAll()
             update()
