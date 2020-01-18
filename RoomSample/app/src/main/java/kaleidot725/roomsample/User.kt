@@ -10,5 +10,7 @@ data class User(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "first_name") val firstName: String?,
     @ColumnInfo(name = "last_name") val lastName: String?,
-    @Ignore val age: Int
-)
+    @Ignore val age: String?
+) {
+    constructor(id: Int, firstName: String?, lastName: String) : this(id, firstName, lastName, null)
+}
