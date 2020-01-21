@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/oneFragment"
         android:name="kaleidot725.navigationpopupsample.OneFragment"
-        android:label="fragment_one"
-        tools:layout="@layout/fragment_one" >
+        android:label="One"
+        tools:layout="@layout/fragment_one">
         <action
             android:id="@+id/action_oneFragment_to_twoFragment"
             app:destination="@id/twoFragment" />
@@ -17,17 +17,19 @@
     <fragment
         android:id="@+id/twoFragment"
         android:name="kaleidot725.navigationpopupsample.TwoFragment"
-        android:label="fragment_two"
-        tools:layout="@layout/fragment_two" >
+        android:label="Two"
+        tools:layout="@layout/fragment_two">
         <action
             android:id="@+id/action_twoFragment_to_threeFragment"
-            app:destination="@id/threeFragment" />
+            app:destination="@id/threeFragment"
+            app:popUpTo="@+id/oneFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/threeFragment"
         android:name="kaleidot725.navigationpopupsample.ThreeFragment"
-        android:label="fragment_three"
-        tools:layout="@layout/fragment_three" >
+        android:label="Three"
+        tools:layout="@layout/fragment_three">
         <action
             android:id="@+id/action_threeFragment_to_oneFragment"
             app:destination="@id/oneFragment" />
