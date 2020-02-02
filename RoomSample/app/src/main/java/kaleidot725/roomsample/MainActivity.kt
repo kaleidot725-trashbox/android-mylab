@@ -19,14 +19,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         CoroutineScope(Dispatchers.Default).launch {
-    val database =
-        Room.databaseBuilder(applicationContext, AppDatabase::class.java, "database-name")
-            .fallbackToDestructiveMigration()
-            .build()
-    val userDao = database.userDao()
-    val newUser = User(0, Date().time.toString(), Date().time.toString(), null)
-    userDao.insert(newUser)
-    Log.v("TAG", "after insert ${userDao.getAll().toString()}")
+            val database =
+                Room.databaseBuilder(applicationContext, AppDatabase::class.java, "database-name")
+                    .fallbackToDestructiveMigration()
+                    .build()
+            val userDao = database.userDao()
+            val newUser = User(0, Date().time.toString(), Date().time.toString(), null)
+            userDao.insert(newUser)
+            Log.v("TAG", "after insert ${userDao.getAll().toString()}")
 
             userDao.deleteAll()
             Log.v("TAG", "after deleteAll ${userDao.getAll().toString()}")
