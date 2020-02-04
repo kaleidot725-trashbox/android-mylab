@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#aaffaa">
+
+        <ImageView
+            android:id="@+id/icon1_view"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/name1_text_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textSize="32dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/icon1_view"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/age1_text_view"/>
+
+        <TextView
+            android:id="@+id/age1_text_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textSize="32dp"
+            app:layout_constraintTop_toBottomOf="@id/name1_text_view"
+            app:layout_constraintLeft_toRightOf="@id/icon1_view"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#ffaaaa">
+
+        <ImageView
+            android:id="@+id/icon2_view"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/name2_text_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textSize="32dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/icon2_view"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/age2_text_view"/>
+
+        <TextView
+            android:id="@+id/age2_text_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textSize="32dp"
+            app:layout_constraintTop_toBottomOf="@id/name2_text_view"
+            app:layout_constraintLeft_toRightOf="@id/icon2_view"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#aaaaff">
+
+        <ImageView
+            android:id="@+id/icon3_view"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/name3_text_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textSize="32dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/icon3_view"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/age3_text_view"/>
+
+        <TextView
+            android:id="@+id/age3_text_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textSize="32dp"
+            app:layout_constraintTop_toBottomOf="@id/name3_text_view"
+            app:layout_constraintLeft_toRightOf="@id/icon3_view"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

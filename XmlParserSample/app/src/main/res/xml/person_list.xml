@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<person_list>
+    <person name="One" age="20" icon="@drawable/one_icon"/>
+    <person name="Two" age="21" icon="@drawable/two_icon"/>
+    <person name="Three" age="22" icon="@drawable/three_icon"/>
+</person_list>
