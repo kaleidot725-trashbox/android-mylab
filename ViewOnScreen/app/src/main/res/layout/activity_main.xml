@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -89,10 +90,31 @@
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/get_button"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:text="GET"/>
+        android:layout_gravity="right|bottom">
+        <Button
+            android:id="@+id/location_in_window_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:text="IN WINDOW"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/location_on_screen_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:id="@+id/location_on_screen_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="ON SCREEN"
+            app:layout_constraintStart_toEndOf="@id/location_in_window_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
