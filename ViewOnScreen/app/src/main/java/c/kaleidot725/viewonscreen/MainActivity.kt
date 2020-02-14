@@ -2,7 +2,10 @@ package c.kaleidot725.viewonscreen
 
 import android.graphics.Point
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -62,5 +65,17 @@ class MainActivity : AppCompatActivity() {
         val array = IntArray(2)
         this.getLocationOnScreen(array)
         return Point(array[0], array[1])
+    }
+
+    private fun printLocationInWindow() {
+        val textView = findViewById<TextView>(R.id.text_view)
+        val point = textView.getLocationPointInWindow()
+        Log.v("LOG", "X ${point.x} Y ${point.y}")
+    }
+
+    private fun printLocationOnScreen() {
+        val textView = findViewById<TextView>(R.id.text_view)
+        val point = textView.getLocationPointOnScreen()
+        Log.v("LOG", "X ${point.x} Y ${point.y}")
     }
 }
