@@ -1,9 +1,10 @@
 package c.kaleidot725.viewonscreen
 
+import android.app.Dialog
 import android.graphics.Point
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -15,11 +16,33 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        location_in_window_button.setOnClickListener { toastAllViewLocationInWindow() }
-        location_on_screen_button.setOnClickListener { toastAllViewLocationOnScreen() }
+        location_in_window_button.setOnClickListener {
+            toastLocationInWindow(text_view)
+        }
+        location_on_screen_button.setOnClickListener {
+            toastLocationOnScreen(text_view)
+        }
+
+        Dialog(this).apply {
+            setContentView(R.layout.activity_main)
+            window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT)
+            show()
+
+            val textView = findViewById<TextView>(R.id.text_view)
+            val inWindowButton = findViewById<Button>(R.id.location_in_window_button)
+            val onScreenButton = findViewById<Button>(R.id.location_on_screen_button)
+            inWindowButton.setOnClickListener {
+                toastLocationInWindow(textView)
+            }
+            onScreenButton.setOnClickListener {
+                toastLocationOnScreen(textView)
+            }
+        }
+
     }
 
     private fun toastAllViewLocationInWindow() {
+
         var str = getViewLocationInWindowString("one", one) + "\n"
         str += getViewLocationInWindowString("two", two) + "\n"
         str += getViewLocationInWindowString("three", three) + "\n"
@@ -67,15 +90,13 @@ class MainActivity : AppCompatActivity() {
         return Point(array[0], array[1])
     }
 
-    private fun printLocationInWindow() {
-        val textView = findViewById<TextView>(R.id.text_view)
-        val point = textView.getLocationPointInWindow()
-        Log.v("LOG", "X ${point.x} Y ${point.y}")
+    private fun toastLocationInWindow(view: View) {
+        val point = view.getLocationPointInWindow()
+        Toast.makeText(applicationContext, "X ${point.x} Y ${point.y}", Toast.LENGTH_LONG).show()
     }
 
-    private fun printLocationOnScreen() {
-        val textView = findViewById<TextView>(R.id.text_view)
-        val point = textView.getLocationPointOnScreen()
-        Log.v("LOG", "X ${point.x} Y ${point.y}")
+    private fun toastLocationOnScreen(view: View) {
+        val point = view.getLocationPointOnScreen()
+        Toast.makeText(applicationContext, "X ${point.x} Y ${point.y}", Toast.LENGTH_LONG).show()
     }
 }
