@@ -4,8 +4,6 @@ import android.graphics.Color
 import android.graphics.Point
 import android.graphics.Rect
 import android.os.Bundle
-import android.util.DisplayMetrics
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -20,33 +18,33 @@ class MainActivity : AppCompatActivity() {
         val oneTextView = one
         val twoTextView = two
         val threeTextView = three
-        scroll_view.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+
+        scroll_view.viewTreeObserver.addOnScrollChangedListener {
             val screenRect = getScreenRect()
-            val oneRect = oneTextView.getViewRect()
-            if (screenRect.contains(oneRect)) {
-                oneTextView.setBackgroundColor(Color.RED)
-            } else if (screenRect.intersect(oneRect)) {
-                oneTextView.setBackgroundColor(Color.BLUE)
+
+            val oneRect = one.getViewRect()
+            val oneColor = if (screenRect.contains(oneRect)) {
+                Color.RED
+            } else {
+                Color.WHITE
             }
+            oneTextView.setBackgroundColor(oneColor)
 
             val twoRect = twoTextView.getViewRect()
-            if (screenRect.contains(twoRect)) {
-                twoTextView.setBackgroundColor(Color.RED)
-            } else if (screenRect.intersect(twoRect)) {
-                twoTextView.setBackgroundColor(Color.BLUE)
+            val twoColor = if (screenRect.contains(twoRect)) {
+                Color.RED
+            } else {
+                Color.WHITE
             }
+            twoTextView.setBackgroundColor(twoColor)
 
             val threeRect = threeTextView.getViewRect()
-            if (screenRect.contains(threeRect)) {
-                threeTextView.setBackgroundColor(Color.RED)
-            } else if (screenRect.intersect(threeRect)) {
-                threeTextView.setBackgroundColor(Color.BLUE)
+            val threeColor = if (screenRect.contains(threeRect)) {
+                Color.RED
+            } else {
+                Color.WHITE
             }
-
-            Log.v("TAG", "screen ${screenRect}")
-            Log.v("TAG", "one ${oneRect}")
-            Log.v("TAG", "two ${twoRect}")
-            Log.v("TAG", "three ${threeRect}")
+            threeTextView.setBackgroundColor(threeColor)
         }
     }
 
@@ -88,7 +86,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getScreenRect(): Rect {
         val point = Point()
-        windowManager.defaultDisplay.getSize(point)
+        windowManager.defaultDisplay.getRealSize(point)
         return Rect(0, 0, point.x, point.y)
     }
 
