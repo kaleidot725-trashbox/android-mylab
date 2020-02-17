@@ -3,13 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
     <ScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/linear_layout"
@@ -18,9 +17,16 @@
             android:orientation="vertical">
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:textAlignment="center"
+                android:textSize="80sp"
+                android:text="" />
+
+            <TextView
                 android:id="@+id/one"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="200dp"
                 android:textAlignment="center"
                 android:textSize="80sp"
                 android:text="One" />
@@ -28,7 +34,7 @@
             <TextView
                 android:id="@+id/two"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="200dp"
                 android:textAlignment="center"
                 android:textSize="80sp"
                 android:text="Two" />
@@ -36,7 +42,7 @@
             <TextView
                 android:id="@+id/three"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="200dp"
                 android:textAlignment="center"
                 android:textSize="80sp"
                 android:text="Three" />
@@ -44,86 +50,10 @@
             <TextView
                 android:id="@+id/four"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="500dp"
                 android:textAlignment="center"
                 android:textSize="80sp"
-                android:text="Four" />
-
-            <TextView
-                android:id="@+id/five"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:textAlignment="center"
-                android:textSize="80sp"
-                android:text="Five" />
-
-            <TextView
-                android:id="@+id/six"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:textAlignment="center"
-                android:textSize="80sp"
-                android:text="Six" />
-
-            <TextView
-                android:id="@+id/seven"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:textAlignment="center"
-                android:textSize="80sp"
-                android:text="Seven" />
-
-            <TextView
-                android:id="@+id/eight"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:textAlignment="center"
-                android:textSize="80sp"
-                android:text="Eight" />
-
-            <TextView
-                android:id="@+id/nine"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:textAlignment="center"
-                android:textSize="80sp"
-                android:text="Nine" />
+                android:text="" />
         </LinearLayout>
     </ScrollView>
-
-    <TextView
-        android:id="@+id/text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Sample Text"
-        android:textSize="32sp"/>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom">
-        <Button
-            android:id="@+id/location_in_window_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|bottom"
-            android:text="IN WINDOW"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/location_on_screen_button"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-        <Button
-            android:id="@+id/location_on_screen_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="ON SCREEN"
-            app:layout_constraintStart_toEndOf="@id/location_in_window_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 </FrameLayout>
